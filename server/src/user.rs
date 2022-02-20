@@ -111,17 +111,19 @@ pub async fn callback(
                 }
             }
             Ok(HttpResponse::Found()
-                .header(
-                    "Location",
-                    format!("{}/#/user", env::var("pipehub_domain_web").unwrap()),
-                )
+//                 .header(
+//                     "Location",
+//                     format!("{}/#/user", env::var("pipehub_domain_web").unwrap()),
+//                 )
+                .header("Location", "/#/user")
                 .body(Body::Empty))
         }
         _ => Ok(HttpResponse::Found()
-            .header(
-                "Location",
-                format!("{}/", env::var("pipehub_domain_web").unwrap()),
-            )
+//             .header(
+//                 "Location",
+//                 format!("{}/", env::var("pipehub_domain_web").unwrap()),
+//             )
+            .header("Location", "/#/user")
             .body(Body::Empty)),
     }
 }
